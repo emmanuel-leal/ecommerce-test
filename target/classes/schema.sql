@@ -1,0 +1,50 @@
+--DROP TABLE IF EXISTS product_history;
+--DROP TABLE IF EXISTS products;
+--DROP TABLE IF EXISTS roles;
+--DROP TABLE IF EXISTS users;
+--
+--CREATE USER ecommerce;
+--CREATE DATABASE ecommerce;
+--GRANT ALL PRIVILEGES ON DATABASE ecommerce TO ecommerce;
+--use ecommerce<
+--
+--CREATE TABLE roles (
+--  role_Id VARCHAR(250) NOT NULL PRIMARY KEY,
+--  role VARCHAR(250) NOT NULL
+--);
+--
+--
+--CREATE TABLE users (
+--  user_id VARCHAR(250) NOT NULL PRIMARY KEY,
+--  name VARCHAR(250) NOT NULL,
+--  last_name VARCHAR(250) NOT NULL,
+--  second_last_name VARCHAR(250) NOT NULL,
+--  is_verified boolean NOT NULL,
+--  password VARCHAR(250) NOT NULL,
+--  email VARCHAR(250) NOT NULL ,
+--  role_id VARCHAR(250) NOT NULL ,
+--  FOREIGN KEY (role_id) REFERENCES roles(role_id)
+--);
+--
+--
+--CREATE TABLE products (
+--  product_id VARCHAR(250) NOT NULL PRIMARY KEY,
+--  description VARCHAR(250) NOT NULL,
+--  brand VARCHAR(250) NOT NULL,
+--  created_at timestamp ,
+--  updated_at timestamp ,
+--  price numeric NOT NULL
+--);
+--
+--CREATE TABLE product_history (
+--  product_history_id VARCHAR(250) NOT NULL PRIMARY KEY,
+--  product_id VARCHAR(250) NOT NULL,
+--  description_query VARCHAR(250) NOT NULL,
+--  user_id VARCHAR(250) NOT NULL,
+--  queried_at timestamp NOT NULL,
+--  FOREIGN KEY (product_id) REFERENCES products(product_id),
+--  FOREIGN KEY (user_id) REFERENCES users(user_id)
+--);
+--
+--
+--

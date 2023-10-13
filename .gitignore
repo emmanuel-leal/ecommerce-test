@@ -247,3 +247,14 @@ replay_pid*
 .nfs*
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,linux,intellij,java
+
+.classpath
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/vcs.xml
+.project
+target/ecommerce-test-0.0.1-SNAPSHOT.jar.original
+target/generated-sources/
+target/maven-archiver/

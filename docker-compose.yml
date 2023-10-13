@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  ecommerce-db-postgress:
+    image: postgres:16
+    container_name: ecommerce-db-postgress
+    environment:
+      - POSTGRES_USER=ecommerce
+      - POSTGRES_PASSWORD=Test12345
+    volumes:
+      - postgresql2:/var/lib/postgresql
+      - postgresql_data2:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  ecommerce-service:
+    image: ecommerce
+    container_name: ecommerce-service
+    mem_limit: 2g
+    memswap_limit: 2g
+    build: ./
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://ecommerce-db-postgress:5432/ecommerce
+      SPRING_DATASOURCE_USERNAME: ecommerce
+      SPRING_DATASOURCE_PASSWORD: Test12345
+    depends_on:
+      - ecommerce-db-postgress
+    ports:
+      - 8082:8082
+volumes:
+  postgresql2:
+  postgresql_data2:

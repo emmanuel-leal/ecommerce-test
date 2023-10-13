@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  SonarQube:
+    image: sonarqube:community
+    container_name: sonar-server
+    depends_on:
+      - db
+
+    environment:
+      - sonar.jdbc.url=jdbc:postgresql://db:5432/sonar
+    volumes:
+      - SonarQube_data:/opt/SonarQube/data
+      - SonarQube_extensions:/opt/SonarQube/extensions
+      - SonarQube_logs:/opt/SonarQube/logs
+    ports:
+      - "9000:9000"
+  db:
+    image: postgres:16
+    container_name: sonar-db
+
+    environment:
+      - POSTGRES_USER=sonar
+      - POSTGRES_PASSWORD=Test12345
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+  ecommerce-db:
+    image: postgres:16
+    container_name: ecommerce-db
+    environment:
+      - POSTGRES_USER=ecommerce
+      - POSTGRES_PASSWORD=Test12345
+    volumes:
+      - postgresql2:/var/lib/postgresql
+      - postgresql_data2:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  SonarQube_data:
+  SonarQube_extensions:
+  SonarQube_logs:
+  postgresql:
+  postgresql_data:
+  postgresql2:
+  postgresql_data2:

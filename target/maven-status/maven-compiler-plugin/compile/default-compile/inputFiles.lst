@@ -1,0 +1,15 @@
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/application/service/ProductsService.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/infrastructure/repository/ProductsRepository.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/domain/dto/ResponseDTO.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/domain/dto/ProductsDto.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/domain/exception/InternalErrorException.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/domain/exception/InvalidaDataException.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/infrastructure/configuration/SwaggerConfig.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/infrastructure/configuration/ProductsConfig.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/users/domain/model/Roles.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/users/domain/model/Users.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/EcommerceTestApplication.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/application/controller/ProductsController.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/domain/converter/ProductsConverter.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/domain/model/Products.java
+/home/emmanuel-leal-rog/Documents/git-proyects/ecommerce-test/src/main/java/com/emmanuel/test/products/application/service/impl/ProductsServiceImpl.java
