@@ -258,3 +258,5 @@ replay_pid*
 target/ecommerce-test-0.0.1-SNAPSHOT.jar.original
 target/generated-sources/
 target/maven-archiver/
+.idea/
+.idea/**
