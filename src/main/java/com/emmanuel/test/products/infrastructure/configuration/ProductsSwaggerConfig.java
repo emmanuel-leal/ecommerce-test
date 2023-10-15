@@ -24,21 +24,16 @@ import java.util.Collection;
 import java.util.List;
 
 @Configuration @EnableSwagger2
-public class SwaggerConfig {
-
-//    @Bean
-//    protected OpenAPI getApiInfo(){
-//        return new OpenAPI().info(new Info().title("ecommerce api").description("eccomerce api test").version("0.0.1"));
-//    }
-
+public class ProductsSwaggerConfig {
 
     @Bean
-    public Docket api() {
+    public Docket apiProducts() {
         return new Docket(springfox.documentation.spi.DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.emmanuel.test.products.application.controller")) // Reemplaza con el paquete de tus controladores
+                .apis(RequestHandlerSelectors.basePackage("com.emmanuel.test.products.application.controller"))
                 .paths(PathSelectors.any())
                 .build()
+                .groupName("PRODUCTS")
                 .apiInfo(apiInfo());
     }
 
@@ -66,21 +61,5 @@ public class SwaggerConfig {
     private boolean shouldRegisterLinksMapping(WebEndpointProperties webEndpointProperties, Environment environment, String basePath) {
         return webEndpointProperties.getDiscovery().isEnabled() && (StringUtils.hasText(basePath) || ManagementPortType.get(environment).equals(ManagementPortType.DIFFERENT));
     }
-//    @Bean
-//    public Docket api() {
-//        return new Docket(springfox.documentation.spi.DocumentationType.SWAGGER_2)
-//            .select()
-//            .apis(RequestHandlerSelectors.basePackage("com.emmanuel.test.products.application.controller"))
-//            .paths(PathSelectors.any())
-//            .build()
-//            .apiInfo(apiInfo());
-//    }
-//
-//    private ApiInfo apiInfo() {
-//        return new ApiInfoBuilder()
-//            .title("API de Ejemplo")
-//            .description("Documentación de la API de ejemplo con Swagger")
-//            .version("1.0")
-//            .build();
-//    }
+
 }

@@ -27,7 +27,7 @@ public class ProductsController {
     ;
 
     @PostMapping("/product")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseDTO saveProduct(@RequestBody ProductsDto product) {
         return this.productService.saveProduct(product);
     }

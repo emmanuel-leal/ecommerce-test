@@ -22,8 +22,8 @@ public class Users {
 	private String secondLastName;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "role_id")
-	private Roles roleId;
+	@JoinColumn(name = "role")
+	private Roles role;
 	
 	private boolean isVerified;
 	

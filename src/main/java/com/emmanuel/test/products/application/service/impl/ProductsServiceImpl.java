@@ -27,7 +27,7 @@ public class ProductsServiceImpl implements ProductsService {
     private final ProductsRepository productsRepository;
 
 
-    private final ResponseDTO response;
+    private final ResponseDTO productResponse;
 
     @Override
     public ResponseDTO getAllProducts() {
@@ -94,10 +94,10 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     private ResponseDTO createResponse(Object data, String statusCode, String message) {
-        this.response.setData(data);
-        this.response.setMessage(message);
-        this.response.setStatusCode(statusCode);
-        return this.response;
+        this.productResponse.setData(data);
+        this.productResponse.setMessage(message);
+        this.productResponse.setStatusCode(statusCode);
+        return this.productResponse;
     }
 
 }

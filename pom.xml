@@ -43,7 +43,47 @@
                 <sonar.host.url>
                     http://localhost:9000
                 </sonar.host.url>
+                <sonar.jdbc.url>jdbc:postgresql://www.example.com/sonar</sonar.jdbc.url>
+                <sonar.jdbc.driver>org.postgresql.Driver</sonar.jdbc.driver>
+                <sonar.jdbc.username>sonar</sonar.jdbc.username>
+                <sonar.jdbc.password>Test12345</sonar.jdbc.password>
+                <sonar.exclusions>
+                    src/main/java/com/emmanuel/test/products/domain/**,
+                    src/main/java/com/emmanuel/test/products/infrastructure/**
+                </sonar.exclusions>
             </properties>
+        </profile>
+        <profile>
+            <id>coverage</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>${jacoco.maven.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>report</id>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                                <configuration>
+                                    <formats>
+                                        <format>XML</format>
+                                    </formats>
+                                </configuration>
+                            </execution>
+
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
     <parent>
@@ -55,6 +95,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mockito.all.version>1.9.5</mockito.all.version>
         <java.version>11</java.version>
+        <jacoco.maven.plugin.version>0.8.10</jacoco.maven.plugin.version>
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ./target/site/jacoco-aggregate/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <dependencies>
@@ -65,12 +109,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.springframework</groupId>-->
-<!--                    <artifactId>spring-web</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -151,6 +189,7 @@
             <version>3.0.0</version>
         </dependency>
 
+
     </dependencies>
 
     <build>
@@ -193,15 +232,5 @@
                 </configuration>
             </plugin>
         </plugins>
-<!--        <pluginManagement>-->
-<!--            <plugins>-->
-<!--                <plugin>-->
-<!--                    <groupId>org.sonarsource.scanner.maven</groupId>-->
-<!--                    <artifactId>sonar-maven-plugin</artifactId>-->
-<!--                    <version>3.10.0.2594</version>-->
-<!--                </plugin>-->
-<!--            </plugins>-->
-<!--        </pluginManagement>-->
     </build>
-
 </project>

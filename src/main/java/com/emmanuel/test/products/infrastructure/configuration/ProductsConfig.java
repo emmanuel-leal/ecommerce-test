@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ProductsConfig {
     @Bean
-    public ResponseDTO response() {
+    public ResponseDTO productResponse() {
         return new ResponseDTO();
     }
 }

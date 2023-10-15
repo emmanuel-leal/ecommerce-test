@@ -19,4 +19,5 @@ chmod 775 ./src/test/docker/wait-container.sh
 ./src/test/docker/wait-container.sh sonar-server "SonarQube is operational" 120
 
 
-mvn clean install package sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Powasp-dependency-check
+mvn clean install package sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Pcoverage
+#mvn clean install package sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Pcoverage -Powasp-dependency-check

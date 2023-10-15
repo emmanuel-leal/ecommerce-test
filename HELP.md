@@ -30,3 +30,4 @@ However, no services were found. As of now, the application won't start!
 Please make sure to add at least one service in the `compose.yaml` file.
 
 http://localhost:8082/ecommerce-service/v2/api-docs
+http://localhost:8082/ecommerce-service/swagger-ui/index.html#/products-controller/saveProductUsingPOST
