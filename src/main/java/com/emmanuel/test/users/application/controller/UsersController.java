@@ -24,8 +24,9 @@ public class UsersController {
         return this.usersService.saveUser(user);
     }
 
-    @PutMapping("/user")
-    public ResponseDTO updateUser(@RequestBody UsersDto user) {
+    @PutMapping("/user/{userId}")
+    public ResponseDTO updateUser(@RequestBody UsersDto user,@PathVariable String userId) {
+        user.setUserId(userId);
         return this.usersService.updateUser(user);
     }
 
@@ -33,9 +34,9 @@ public class UsersController {
     public ResponseDTO ResponseDTOgetUserById(@PathVariable String userId) {
         return this.usersService.getUserById(userId);
     }
-    @DeleteMapping("/user")
-    public ResponseDTO deletUser(@RequestBody UsersDto user) {
-        return this.usersService.deleteUser(user);
+    @DeleteMapping("/user/{userId}")
+    public ResponseDTO deletUser(@PathVariable String userId) {
+        return this.usersService.deleteUser(userId);
     }
 
 

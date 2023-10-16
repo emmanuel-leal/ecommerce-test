@@ -10,7 +10,7 @@ public interface ProductsService {
 
 	ResponseDTO saveProduct(ProductsDto productRequest);
 
-	void deleteProduct(ProductsDto productRequest);
+	void deleteProduct(String productId);
 
 	ResponseDTO getProductById(String productId);
 

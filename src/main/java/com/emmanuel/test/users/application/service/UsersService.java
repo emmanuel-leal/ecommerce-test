@@ -11,7 +11,7 @@ public interface UsersService {
 	
 	ResponseDTO updateUser(UsersDto userRequest);
 
-	ResponseDTO deleteUser(UsersDto userRequest);
+	ResponseDTO deleteUser(String userId);
 
 	ResponseDTO getUserById(String userIdRequest);
 }

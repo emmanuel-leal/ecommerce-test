@@ -17,9 +17,5 @@ public interface UsersConverter {
     @BeanMapping(unmappedTargetPolicy = ReportingPolicy.IGNORE)
     UsersDto toUsersDto(Users users);
     @BeanMapping(unmappedTargetPolicy = ReportingPolicy.IGNORE)
-    void updateModel(UsersDto usersDto, @MappingTarget Users users);
-    @BeanMapping(unmappedTargetPolicy = ReportingPolicy.IGNORE)
-    void updateDTO(Users users, @MappingTarget UsersDto usersDto);
-    @BeanMapping(unmappedTargetPolicy = ReportingPolicy.IGNORE)
     void updateProductDTO(UsersDto usersDto, @MappingTarget UsersDto users);
 }

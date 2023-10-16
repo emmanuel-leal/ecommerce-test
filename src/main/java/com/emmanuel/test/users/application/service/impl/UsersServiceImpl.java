@@ -93,18 +93,18 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public ResponseDTO deleteUser(UsersDto userRequest) {
+	public ResponseDTO deleteUser(String userId) {
 		try {
-			var user = (UsersDto)this.getUserById(userRequest.getLoggedUserId()).getData();
+			var user = (UsersDto)this.getUserById(userId).getData();
 			if (user != null && isAdminRole(user.getRole().getRole())) {
 				this.usersRepository.delete(UsersConverter.INSTANCE.toUsersModel(user));
 				return this.createResponse(null, HttpStatus.NO_CONTENT.toString(), "Success user deleted");
 			} else {
-				log.error("Error to delete user with data {}",userRequest);
+				log.error("Error to delete user with id {}", userId);
 				throw new InvalidaDataException("Error to delete user");
 			}
 		} catch (Exception e) {
-			log.error("Error to delete user {}",e.getMessage());
+			log.error("Error to delete user id {}",e.getMessage());
 			throw new InvalidaDataException("Error to delete user");
 		}
 	}

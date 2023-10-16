@@ -24,23 +24,18 @@ public class ProductsController {
         return productService.getAllProducts();
     }
 
-    ;
-
     @PostMapping("/product")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseDTO saveProduct(@RequestBody ProductsDto product) {
         return this.productService.saveProduct(product);
     }
 
-    ;
-
-    @PutMapping("/product")
+    @PutMapping("/product/{productId}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseDTO updateProduct(@RequestBody ProductsDto product) {
+    public ResponseDTO updateProduct(@RequestBody ProductsDto product,@PathVariable String productId) {
+        product.setProductId(productId);
         return this.productService.updateProduct(product);
     }
-
-    ;
 
     @GetMapping("/product/{productId}")
     @ResponseStatus(HttpStatus.OK)
@@ -48,14 +43,10 @@ public class ProductsController {
         return this.productService.getProductById(productId);
     }
 
-    ;
-
-    @DeleteMapping("/product")
+    @DeleteMapping("/product/{productId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteProduct(@RequestBody ProductsDto product) {
-        this.productService.deleteProduct(product);
+    public void deleteProduct(@PathVariable String productId) {
+        this.productService.deleteProduct(productId);
     }
-
-    ;
 
 }

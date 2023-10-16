@@ -45,7 +45,7 @@ public class ProductsServiceImpl implements ProductsService {
             return this.createResponse(null, HttpStatus.NO_CONTENT.toString(), "product list not founded");
         } else {
             List<ProductsDto> productListDto = productList.stream().map(ProductsConverter.INSTANCE::toProductsDto).collect(Collectors.toList());
-            return this.createResponse(productListDto, "200", "product list founded");
+            return this.createResponse(productListDto, HttpStatus.OK.toString(), "product list founded");
         }
     }
 
@@ -73,7 +73,7 @@ public class ProductsServiceImpl implements ProductsService {
             var product = this.productsRepository.save(productModel);
 
             log.info("product saved {}", product);
-            return this.createResponse(product, HttpStatus.CREATED.toString(), "Success product saved");
+            return this.createResponse(ProductsConverter.INSTANCE.toProductsDto(product), HttpStatus.CREATED.toString(), "Success product saved");
 
         } catch (Exception e) {
             log.error("Error to save product, message: {}", e.getMessage());
@@ -89,8 +89,13 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     @Override
-    public void deleteProduct(ProductsDto productRequest) {
-        this.productsRepository.deleteById(productRequest.getProductId());
+    public void deleteProduct(String productId) {
+        try {
+            this.productsRepository.deleteById(productId);
+        }catch (Exception ex){
+            log.error("Error to delete product with id {}", productId);
+            throw new InternalErrorException("Error to delete product with id {}");
+        }
     }
 
     private ResponseDTO createResponse(Object data, String statusCode, String message) {
