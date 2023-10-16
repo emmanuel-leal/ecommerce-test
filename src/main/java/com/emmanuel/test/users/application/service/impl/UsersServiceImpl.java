@@ -96,7 +96,7 @@ public class UsersServiceImpl implements UsersService {
 	public ResponseDTO deleteUser(String userId) {
 		try {
 			var user = (UsersDto)this.getUserById(userId).getData();
-			if (user != null && isAdminRole(user.getRole().getRole())) {
+			if (user != null && isAdminRole(user.getRole())) {
 				this.usersRepository.delete(UsersConverter.INSTANCE.toUsersModel(user));
 				return this.createResponse(null, HttpStatus.NO_CONTENT.toString(), "Success user deleted");
 			} else {

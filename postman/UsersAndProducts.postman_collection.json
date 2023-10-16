@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "081b47d5-3e8f-41c6-86fd-b7446270dc6b",
+		"name": "UsersAndProducts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/users/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/users/user/32a348ab-7ec4-4ff0-8b83-434742342512",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/users/user/32a348ab-7ec4-4ff0-8b83-434742342512",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"users",
+						"user",
+						"32a348ab-7ec4-4ff0-8b83-434742342512"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/users/user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": null,\n    \"name\": \"jose\",\n    \"email\": \"jose@gmail.com\",\n    \"password\": \"1234\",\n    \"lastName\": \"lealman\",\n    \"secondLastName\": \"sadfa\",\n    \"roleId\": \"1\",\n    \"loggedUserId\":\"33a480ab-7ec4-4ff0-8b83-434742qas21d\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/users/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"users",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/users/user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"eb12c7f7-5615-4e2c-a7e7-1c23ab67e1c1\",\n    \"name\": \"emmanuel\",\n    \"email\": \"jose@gmail.com\",\n    \"password\": \"123\",\n    \"lastName\": \"lealman\",\n    \"secondLastName\": \"sadfa\",\n    \"roleId\": \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/users/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"users",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/products/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+
+		{
+			"name": "http://localhost:8082/products/product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"product 1\",\n    \"price\": 2.34,\n    \"userId\": \"33a480ab-7ec4-4ff0-8b83-434742qas21d\",\n    \"brand\":\"hakuna matata\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/products/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"products",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/products/product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"product 100\",\n    \"price\": 2.34,\n    \"userId\": null,\n    \"brand\":\"hakuna matata\",\n    \"productId\": \"72f7ca36-c182-4f90-97d5-0b80d960f4c6\"\n}",
+					"options": {{
+			"name": "http://localhost:8082/products-history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/products-history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"products-history"
+					]
+				}
+			},
+			"response": []
+		},
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/products/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"products",
+						"product"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

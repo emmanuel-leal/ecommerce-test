@@ -1,5 +1,6 @@
 package com.emmanuel.test.users.domain.model;
 
+import com.emmanuel.test.users.domain.dto.RolEnum;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -20,10 +21,8 @@ public class Users {
 	private String lastName;
 	
 	private String secondLastName;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "role")
-	private Roles role;
+
+	private RolEnum role;
 	
 	private boolean isVerified;
 	
